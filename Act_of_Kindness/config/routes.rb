@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
 
   resources :users
-  root 'welcome#index'
+  get '/sign_in' => 'users#sign_in'
+ get '/profile' => 'users#profile'
+
+
+ post '/helpers' => 'helpers#create'
+ delete '/helpers/:id' => 'helpers#destroy'
+
+ post '/session_log_in' => 'sessions#log_in_behavior'
+ delete '/session_log_out' => 'sessions#log_out_behavior'
+  #root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

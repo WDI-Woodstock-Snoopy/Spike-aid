@@ -1,0 +1,22 @@
+<h1><%= @user.username %>... is logged in</h1>
+
+<ul>
+  <% @user.helpers.each do |helper| %>
+    <li>
+      <%= form_tag("/helpers/#{ helper.id }", method: :delete) do %>
+        <%= submit_tag "Hand"%>
+      <% end %>
+      <%= help.message %>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_tag('/session_log_out', method: :delete) do %>
+  <%= submit_tag "Log-Out" %>
+<% end %>
+
+<%= form_for @helper do |f|%>
+  <%= f.label :message %>
+  <%= f.text_field :message %>
+  <%= f.submit %>
+<% end %>
