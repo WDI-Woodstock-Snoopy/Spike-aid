@@ -1,3 +1,17 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-color: white;
+}
+#cards-view{
+  margin: 0px;
+  float: left;
+  width: 66%;
+  background-color: lightgrey;
+}
+
+.sidebar{
+  margin: 0px;
+  width: 33%;
+}
