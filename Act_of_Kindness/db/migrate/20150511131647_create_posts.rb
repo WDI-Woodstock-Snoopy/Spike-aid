@@ -1,10 +1,10 @@
 class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
-      t.string :references
-      t.string :users
+        t.string :title
+        t.string :description
 
-      t.timestamps null: false
+      t.timestamps null: true
     end
   end
 end
