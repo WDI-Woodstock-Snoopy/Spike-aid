@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-    resources :users
+  resources :users
+  resources :posts
    get '/sign_in' => 'users#sign_in'
    get '/profile' => 'users#profile'
 

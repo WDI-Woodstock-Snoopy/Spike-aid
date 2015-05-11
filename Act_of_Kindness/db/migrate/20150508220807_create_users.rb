@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :upvotes_count
       t.integer :score
       t.string :location
+      
       #need something for picture
       t.timestamps null: false
     end
