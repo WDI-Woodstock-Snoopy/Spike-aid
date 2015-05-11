@@ -35,7 +35,6 @@ class UsersController < ApplicationController
     @helper = Helper.new
   end
 
-
   private
 
   def user_params
