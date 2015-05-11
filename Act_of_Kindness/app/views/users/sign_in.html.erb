@@ -1,9 +1,16 @@
-<h3>Sign-In</h3>
+<link rel="stylesheet" type="text/css" href="sign-in.css">
 
-<%= form_tag('/session_log_in', method: :post) do%>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Sign-It" %>
-<% end %>
+  <div class="log-box">
+    <h1>AOK's</h1>
+    <h3>Sign-In</h3>
+
+  <section>
+  <%= form_tag('/session_log_in', method: :post) do%>
+    <%= label_tag :username %><br>
+    <%= text_field_tag :username %><br>
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %><br>
+    <%= submit_tag "Sign-In" %>
+  <% end %>
+  </section>
+  </div>
