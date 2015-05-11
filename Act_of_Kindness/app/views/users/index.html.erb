@@ -158,6 +158,13 @@
     google.maps.event.addDomListener(window, 'load', initializeMap);
 
     </script>
-
+<!-- Faker Names -->
+<ul>
+  <% @people.each do |person| %>
+    <li class='name'>
+      <%= person.name %>
+    </li>
+  <% end %>
+</ul>
   </body>
 </html>
