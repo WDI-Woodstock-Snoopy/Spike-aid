@@ -16,19 +16,27 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
+
   </head>
   <body>
     <div id="cards-view">
     </div>
-        <!-- user data input form -->
-    <div id="sidebar">
-      <div id="search">
-      <input id="address" type="textbox" value="Chicago, IL">
-      <input type="button" value="Enter Address" onclick="codeAddress()">
+
+    <div class="sidebar" id="main-sidebar">
+      <div class="sidebar" id="my-rank">
       </div>
 
-      <!-- map -->
-      <div id="map" style="width: 500px; height: 400px;"></div>
+      <div class="sidebar" id="map-view">
+        <!-- user data input form -->
+        <div id="search">
+        <input id="address" type="textbox" value="Chicago, IL">
+        <input type="button" value="Enter Address" onclick="codeAddress()">
+        </div>
+
+        <!-- map -->
+        <div id="map" style="width: 500px; height: 400px;"></div>
+        <div class="sidebar" id="map"></div>
+      </div>
     </div>
 
 
@@ -49,6 +57,7 @@
     map = new google.maps.Map(document.getElementById('map'), defaultOptions);
 
     var locations = [];
+    var marker;
 
     $.ajax({
         method: 'get',
@@ -56,26 +65,21 @@
         dataType: 'json'
         })
         .done(function(data){
-          // data = data.slice(1,data.length/2);
           for(var i=0; i<data.length; i++){
             locations.push(data[i]);
           };
-          console.log(data);
-          var marker;
-
           for (var i = 0; i < locations.length; i++) {
             marker = new google.maps.Marker({
               position: new google.maps.LatLng(locations[i].latitude, locations[i].longitude),
               map: map
             });
-
-          google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function() {
-              infowindow.setContent(locations[i][0]);
-              infowindow.open(map, marker);
-            }
-          })(marker, i));
-        };
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+              return function() {
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+              }
+            })(marker, i));
+          };
       });
 
       if(navigator.geolocation) {
