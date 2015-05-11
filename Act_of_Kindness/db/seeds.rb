@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
   100.times do
-    User.create( {name: Faker::Name.name} )
+    User.create!( {name: Faker::Name.name} )
   end
