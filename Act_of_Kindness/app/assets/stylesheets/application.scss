@@ -14,18 +14,3 @@
  *= require_self
  */
 @import 'main.scss';
-
-body{
-  background-color: white;
-}
-#cards-view{
-  margin: 0px;
-  float: left;
-  width: 66%;
-  background-color: lightgrey;
-}
-
-.sidebar{
-  margin: 0px;
-  width: 33%;
-}
