@@ -67,11 +67,10 @@
 
     var locations = [];
 
-    var locations = [];
-
+// post location
     $.ajax({
         method: 'get',
-        url: 'https://data.cityofchicago.org/resource/uh4d-zh38?$$app_token=Prn58WX99dW48gNx4RtzbOjIy', //this should be replaced with an internal api to the DB
+        url: '', //this should be replaced with an internal api to the DB
         dataType: 'json'
         })
         .done(function(data){
@@ -96,7 +95,6 @@
           })(marker, i));
         };
       });
-
 
 
       if(navigator.geolocation) {
@@ -150,7 +148,6 @@
             var marker = new google.maps.Marker({
                 map: map,
                 position: results[0].geometry.location,
-                image: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
             });
           } else {
             alert("Geocode was not successful for the following reason: " + status);
