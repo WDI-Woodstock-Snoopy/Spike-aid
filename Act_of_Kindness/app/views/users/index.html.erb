@@ -120,9 +120,18 @@
         alert("Geocode was not successful for the following reason: " + status);
         }
       });
-    }
+  }
 
-//==================================== get location coordinates from user input
+  $.ajax({
+    method: 'GET',
+    url: '/users', //this should be replaced with an internal api to the DB
+    dataType: 'json',
+    // data: {post: { lat: 'lat', long: 'long' }},
+    success: (function(data){
+      console.log(data);
+    })
+  })
+
 
 
     </script>
